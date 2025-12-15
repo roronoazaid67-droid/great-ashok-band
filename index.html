@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Great Ashok Band</title>
+
+<!-- Premium Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    /* --- FIX: remove right-side gap & prevent overflow --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* safety: ensure no section/div grows bigger than viewport */
+section, div {
+  max-width: 100%;
+}
+
+    
+/* NAVBAR (FINAL FIXED VERSION) */
+.navbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 12px 30px;   /* padding kam ki */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    background: rgba(0,0,0,0.35);   /* thin blur background */
+    backdrop-filter: blur(6px);
+}
+
+/* LOGO */
+.logo {
+    font-family: 'Playfair Display',serif;
+    font-size: 1.4rem;   /* size chhota kiya */
+    font-weight: 800;
+    color: #FFE2A4;      /* soft premium gold */
+    letter-spacing: 1px;
+    white-space: nowrap; /* line-break stop */
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;          /* spacing kam kiya */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Normal links */
+.nav-links a {
+    text-decoration: none;
+    color: #FFE2A4;     /* same gold */
+    font-size: 1.4rem; /* font size kam ki */
+    font-weight: 600;
+    white-space: nowrap; /* wrap nahi hoga */
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+    color: rgb(255, 255, 255);
+    transform: translateY(-2px);
+}
+
+
+    /* HERO SECTION */
+    .hero {
+        height: 100vh;
+        background: url(ashok-bg.jpg.jpg) center/cover no-repeat;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Blur + Dark Overlay */
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.55);
+        backdrop-filter: blur(0px);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+        max-width: 850px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* BIG MAIN TEXT */
+    .title {
+        font-family: 'Playfair Display', serif;
+        font-size: 4.8rem;
+        font-weight: 800;
+        color: gold;
+        margin-bottom: 10px;
+        text-shadow: 0 0 20px rgba(255,215,0,0.4);
+    }
+
+    /* NEW TAGLINE */
+    .subtitle {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+        color: #FFE2A4;
+        margin-bottom: 35px;
+    }
+
+    /* ANIMATED BUTTON */
+    .btn {
+        display: inline-block;
+        padding: 15px 45px;
+        border: 2px solid gold;
+        color: gold;
+        font-size: 1.3rem;
+        text-decoration: none;
+        border-radius: 50px;
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: gold;
+        color: black;
+        transform: scale(1.06);
+    }
+
+    .btn::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+        animation: swipe 2s infinite;
+    }
+
+    @keyframes swipe {
+        0% { left: -100%; }
+        50% { left: 120%; }
+        100% { left: 120%; }
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">Great Ashok Band</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">home</a>home</li>
+        <li><a href="gallery.html">Gallery</a>gallery</li>
+        <li><a href="services.html">services</a>services</li>
+        <li><a href="about.html">about</a>about</li>
+        <li><a href="contact.html">contact</a>contact</li>
+    </ul>
+</nav>
+>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <div class="hero-content">
+        <h1 class="title">GREAT ASHOK BAND</h1>
+        <p class="subtitle">Premium • Traditional • Wedding Band</p>
+        <a href="https://wa.me/918920436464?text=Hello%20Great%20Ashok%20Band,%20I%20want%20to%20book%20your%20services."
+   class="btn" target="_blank">
+   Book Now
+</a>
+    </div>
+</div>
+
+</body>
+</html>

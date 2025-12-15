@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head><link rel="stylesheet" href="style.css">
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About — Great Ashok Band</title>
+<link rel="stylesheet" href="assets/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#000;
+  --gold:#d4af37;
+  --gold-soft:#FFE2A4;
+  --muted: rgba(255,226,164,0.7);
+  --wa-gold:#d6a953;
+}
+
+/* base */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--gold-soft);font-family:'Poppins',sans-serif;overflow-x:hidden}
+
+/* NAVBAR: logo left, links centered */
+.custom-navbar{
+  width:100%;
+  display:flex;
+  align-items:center;
+  padding:16px 40px;
+  position:fixed;
+  top:0;left:0;
+  z-index:999;
+  background:rgba(0,0,0,0.55);
+  border-bottom:1px solid rgba(212,175,55,0.06);
+  height:64px;
+}
+.custom-logo{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  font-weight:700;
+  font-size:22px;
+  letter-spacing:1px;
+  margin-left:6px;
+  z-index:1001;
+  flex:0 0 auto;
+}
+
+/* center the nav links horizontally */
+.custom-nav-center{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:28px;
+  align-items:center;
+  z-index:1000;
+}
+.custom-nav-center a{
+  color:var(--gold-soft);
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:0.5px;
+  font-size:16px;
+  transition: color .15s, transform .12s;
+}
+.custom-nav-center a:hover{ color:#fff; transform:translateY(-3px) }
+
+/* main container */
+.container{ max-width:1200px; margin:110px auto 60px; padding:0 20px; }
+
+/* Heading */
+.heading{ text-align:center; margin-bottom:20px; }
+.heading h1{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  font-size:48px;
+  letter-spacing:2px;
+  text-shadow:0 6px 24px rgba(212,175,55,0.26);
+}
+.heading p { color:var(--muted); max-width:900px; margin:10px auto 0; }
+
+/* animated gold frame */
+.frame-line{
+  width:100%;
+  margin: 24px auto;
+  height:14px;
+  border-radius:10px;
+  position:relative;
+  overflow:hidden;
+  box-shadow: 0 0 40px rgba(212,175,55,0.06), inset 0 0 20px rgba(212,175,55,0.02);
+  border:1px solid rgba(212,175,55,0.06);
+}
+.frame-line::before{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(90deg,
+    rgba(0,0,0,0) 0%, rgba(212,175,55,0.08) 8%,
+    rgba(212,175,55,0.5) 30%, rgba(212,175,55,0.12) 60%,
+    rgba(0,0,0,0) 100% );
+  transform:translateX(-110%);
+  animation: sweep 3.2s linear infinite;
+  filter:blur(8px);
+}
+@keyframes sweep{ 0%{transform:translateX(-110%)}50%{transform:translateX(30%)}100%{transform:translateX(130%)} }
+.frame-line .inner{ position:absolute; inset:6px; border-radius:8px; border:2px solid rgba(212,175,55,0.04); }
+
+/* layout row */
+.row{ display:flex; gap:28px; align-items:flex-start; justify-content:space-between; margin-top:12px; }
+.left-cards{ flex:1 1 65%; display:flex; gap:18px; flex-wrap:wrap; }
+.card{ flex:1 1 calc(33.333% - 12px); background:transparent; text-align:center; padding:12px; }
+.photo{ border-radius:10px; overflow:hidden; border:2px solid rgba(212,175,55,0.08); transition: transform .35s ease, box-shadow .35s ease; }
+.card img{ width:100%; height:240px; object-fit:cover; display:block; }
+.card:hover .photo{ transform:translateY(-8px); box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 30px rgba(212,175,55,0.06) }
+.caption{ margin-top:12px; font-family:'Playfair Display',serif; font-size:20px; color:var(--gold); letter-spacing:1px; }
+
+/* right list aligned to the card vertical center */
+.right-list{ width:320px; flex-shrink:0; border-left:1px solid rgba(212,175,55,0.04); padding-left:26px; margin-top:20px; }
+.right-list ul{ list-style:none; padding-left:0; margin-top:8px; }
+.right-list li{ margin-bottom:18px; color:var(--gold-soft); font-size:18px; display:flex; gap:12px; align-items:center; }
+.right-list li::before{ content:""; width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 10px rgba(212,175,55,0.3); flex-shrink:0; }
+
+/* stats row */
+.stats{ display:flex; gap:24px; align-items:stretch; justify-content:space-between; margin-top:36px; padding-top:24px; border-top:1px solid rgba(212,175,55,0.04); }
+.stat{ flex:1 1 0; text-align:center; padding:10px; }
+.stat .num{ font-family:'Playfair Display',serif; font-size:28px; color:var(--gold); margin-bottom:6px; }
+.stat .label{ font-size:14px; color:var(--muted); }
+
+/* BOOK NOW */
+.actions{ text-align:center; margin-top:26px; }
+.book-btn{
+  display:inline-flex; gap:12px; align-items:center; padding:14px 36px; border-radius:28px;
+  background: linear-gradient(180deg, #f7d98a, #d7a83a); color:#000; font-weight:800; text-decoration:none;
+  box-shadow: 0 10px 30px rgba(215,156,45,0.18);
+  transition: transform .16s ease, box-shadow .16s;
+}
+.book-btn:hover{ transform:translateY(-6px); box-shadow: 0 22px 48px rgba(215,156,45,0.28); }
+.book-btn .wh{ background:var(--wa-gold); color:#000; width:36px; height:36px; border-radius:8px; display:inline-grid; place-items:center; font-weight:700; box-shadow:0 6px 14px rgba(0,0,0,0.12) }
+
+/* responsive */
+@media (max-width:980px){
+  .row{ flex-direction:column-reverse; }
+  .right-list{ width:100%; border-left:none; padding-left:0; margin-bottom:10px; border-top:1px solid rgba(212,175,55,0.04); padding-top:18px; }
+  .card{ flex:1 1 48% }
+}
+@media (max-width:640px){
+  .card{ flex:1 1 100% }
+  .heading h1{ font-size:28px }
+  .custom-nav-center{ gap:14px; transform:translateX(-50%); left:50% }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="custom-navbar" role="banner">
+  <div class="custom-logo">GREAT ASHOK BAND</div>
+
+  <nav class="custom-nav-center" role="navigation" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="services.html">Services</a>
+    <a href="about.html" aria-current="page">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- MAIN -->
+<div class="container">
+
+  <section class="heading" aria-labelledby="about-title">
+    <h1 id="about-title">About Us</h1>
+    <p>Great Ashok Band, a premier musical ensemble, specializes in electrifying wedding & event performances — combining tradition with premium showmanship.</p>
+  </section>
+
+  <!-- animated golden frame -->
+  <div class="frame-line" aria-hidden="true"><div class="inner"></div></div>
+
+  <!-- main row -->
+  <div class="row">
+
+    <!-- left: 3 cards -->
+    <div class="left-cards" role="list">
+      <div class="card" role="listitem">
+        <div class="photo"><img src="gab.png.jpg" alt="wedding band"></div>
+        <div class="caption">wedding band</div>
+      </div>
+
+      <div class="card">
+        <div class="photo"><img src="car.png.png" alt="vintage car"></div>
+        <div class="caption">vintage car</div>
+      </div>
+
+      <div class="card">
+        <div class="photo"><img src="onwheel.png.png" alt="DJ on wheel"></div>
+        <div class="caption">DJ on wheel</div>
+      </div>
+    </div>
+
+    <!-- right: bullets -->
+    <aside class="right-list" aria-label="Key features">
+      <ul>
+        <li>Professional Team</li>
+        <li>Time Punctuality</li>
+        <li>best Sound</li>
+        <li>Uniformed Team</li>
+      </ul>
+    </aside>
+
+  </div> <!-- row -->
+
+  <!-- stats -->
+  <div class="stats" role="region" aria-label="Statistics">
+    <div class="stat">
+      <div class="num">5000+</div>
+      <div class="label">Events Completed</div>
+    </div>
+    <div class="stat">
+      <div class="num">30</div>
+      <div class="label">Years Experience</div>
+    </div>
+    <div class="stat">
+      <div class="num">Best</div>
+      <div class="label">Wedding Band</div>
+    </div>
+    <div class="stat">
+      <div class="num">Special</div>
+      <div class="label">DJ on wheel</div>
+    </div>
+  </div>
+
+  <!-- actions -->
+  <div class="actions">
+    <!-- change WA number in the href below if needed -->
+    <a class="book-btn" href="https://wa.me/8920436464?text=Hello%20Great%20Ashok%20Band%20I%20want%20to%20book" target="_blank" rel="noopener">
+      >
+      Book Now
+    </a>
+  </div>
+
+</div> <!-- container -->
+
+</body>
+</html>

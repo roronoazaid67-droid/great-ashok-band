@@ -1,0 +1,27 @@
+/* ===== COMMON NAVBAR ===== */
+.navbar{
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:32px;
+  padding:16px 0;
+  background:rgba(0,0,0,0.7);
+  z-index:999;
+}
+
+.navbar a{
+  font-family:'Cinzel', serif;
+  font-size:16px;      /* Gallery & About jaisa */
+  color:#FFD65A;
+  text-decoration:none;
+  letter-spacing:1px;
+  transition:0.3s;
+}
+
+.navbar a:hover{
+  color:#fff;
+}

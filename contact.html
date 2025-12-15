@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" href="style.css">
+
+    
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Great Ashok Band</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+
+body {
+    margin: 0;
+    background: #000;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+.navbar a {
+    margin: 0 20px;
+    font-family:'Playfair Display',serif;
+    color: #fae194;
+    text-decoration: none;
+    font-size: 20px;
+    transition: .3s;
+}
+.navbar a:hover {
+    color: #fff;
+}
+/* HEADER */
+h1 {
+    margin-top: 140px;
+    font-family: 'Cinzel', serif;
+    font-size: 60px;
+    text-align: center;
+    color: #FFD65A;
+}
+.subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 50px;
+}
+/* CONTACT SECTION */
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #FFD65A;
+}
+.left, .right {
+    width: 48%;
+}
+label {
+    display: block;
+    font-size: 18px;
+    margin: 15px 0 5px;
+    color: #FFD65A;
+}
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    border: 1px solid #FFD65A;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+}
+textarea {
+    height: 150px;
+}
+/* BUTTONS */
+.button {
+    width: 100%;
+    background: #FFD65A;
+    color: black;
+    padding: 15px;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.button:hover {
+    opacity: 0.8;
+}
+/* CONTACT INFO */
+.info-box div {
+    margin: 20px 0;
+    font-size: 18px;
+}
+.info-box span {
+    color: #FFD65A;
+}
+/* SECOND BUTTON */
+.find-btn {
+    background: #FFD65A;
+    color: black;
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    display: inline-block;
+}
+.find-btn:hover {
+    opacity: 0.8;
+}
+/* RESPONSIVE */
+@media(max-width: 900px){
+    .left, .right { width: 100%; }
+    h1 { font-size: 42px; }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">gallery</a>
+    <a href="services.html">services</a>
+    <a href="about.html">about</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<h1>Contact Us</h1>
+<div class="subtitle">Get in touch with us for booking inquiries and other communications</div>
+
+<div class="container">
+    <div class="left">
+        <label>Name</label>
+        <input type="text">
+
+        <label>Email</label>
+        <input type="email">
+
+        <label>Message</label>
+        <textarea></textarea>
+
+        <a href="https://wa.me/8920436464?text=Hello%20Great%20Ashok%20Band%2C%20I%20want%20to%20contact%20you" class="button" style="display:block; text-align:center; text-decoration:none;">Send Message on WhatsApp</a>
+    </div>
+
+    <div class="right">
+        <h2 style="font-family: 'Cinzel', serif; color:#FFD65A;">Contact Information</h2>
+
+        <div class="info-box">
+            <div><span>📞</span> 91-8920436464</div>
+            <div><span>📍</span> haat, C 19, Sector 13, Vasundhara, Ghaziabad, Uttar Pradesh 201012</div>
+            <div><span>✉️</span> roronoazaid67@gmail.com</div>
+        </div>
+
+        <a class="find-btn" href="https://maps.app.goo.gl/3yZTSZjeyr8xL4CZ7" target="_blank">Find Us</a>
+    </div>
+</div>
+
+</body>
+</html>

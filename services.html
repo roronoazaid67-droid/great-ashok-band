@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services - Great Ashok Band</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+/* ---------------- GLOBAL ---------------- */
+body {
+    margin: 0;
+    background: #000;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* -------------- LIGHT PARTICLES ---------------- */
+.particles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+.particles span {
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:#FFD65A;
+    border-radius:50%;
+    animation: floatUp 8s linear infinite;
+    opacity:0.7;
+}
+@keyframes floatUp {
+    from { transform: translateY(100vh) scale(1); opacity:0.4; }
+    to   { transform: translateY(-10vh) scale(1.8); opacity:0; }
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+.navbar a {
+    margin: 0 20px;
+    font-family:'Playfair Display',serif;
+    color: #ebd185;
+    text-decoration: none;
+    font-size: 20px;
+    transition: .3s;
+}
+.navbar a:hover {
+    color: white;
+}
+
+/* ---------------- HEADER ---------------- */
+h1 {
+    margin-top: 130px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 60px;
+    color: #FFD65A;
+    text-shadow: 0 0 20px #ffdd76;
+}
+
+/* -------------- SERVICES GRID ---------------- */
+.services {
+    width: 90%;
+    margin: 40px auto 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 35px;
+    z-index:2;
+}
+
+/* -------------- SERVICE CARD ---------------- */
+.card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid #FFD65A;
+    border-radius: 20px;
+    overflow:hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 0 25px rgba(255,214,90,0.3);
+    transform: perspective(600px) rotateX(0);
+    transition: 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* fade in on scroll */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card:hover {
+    transform: perspective(700px) rotateX(8deg) scale(1.03);
+    box-shadow: 0 0 40px rgba(255,214,90,0.7);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card h3 {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    color: #FFD65A;
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.card p {
+    text-align: center;
+    font-size: 15px;
+    padding: 0 15px;
+    color: #ddd;
+}
+
+/* ------------ CTA BUTTON ------------ */
+.cta-btn {
+    display: block;
+    margin: 40px auto 80px;
+    padding: 15px 40px;
+    background: #FFD65A;
+    color: black;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration:none;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px #ffd65a; }
+    50% { transform: scale(1.07); box-shadow: 0 0 25px #ffd65a; }
+    100% { transform: scale(1); box-shadow: 0 0 10px #ffd65a; }
+}
+
+/* ------------ WHATSAPP BUTTON ------------ */
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 15px 25px;
+    background:#25D366;
+    color:#000;
+    font-weight:bold;
+    font-size:18px;
+    border-radius: 50px;
+    text-decoration:none;
+    box-shadow: 0 0 20px #25D366;
+    animation: float 2s infinite ease-in-out;
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+    100% { transform: translateY(0); }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Floating Golden Particles -->
+<div class="particles">
+    <!-- 30 Particles -->
+    <script>
+        for(let i=0; i<30; i++){
+            document.write('<span style="left:'+ (Math.random()*100)+'%; animation-delay:'+(Math.random()*5)+'s;"></span>');
+        }
+    </script>
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">gallery</a>
+    <a href="services.html">services</a>
+    <a href="about.html">about</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<h1>Our Premium Services</h1>
+
+<!-- SERVICES GRID -->
+<div class="services">
+
+    <div class="card">
+        <img src="dulhan.png.png">
+        <h3>Wedding Band</h3>
+        <p>Grand, premium & royal wedding band with traditional + modern fusion.</p>
+    </div>
+
+    <div class="card">
+        <img src="bass.png.jpg">
+        <h3>DJ on wheel</h3>
+        <p>High-power DJ, bass-rich sound, lighting & dance floor experience.</p>
+    </div>
+
+    <div class="card">
+        <img src="dholperson.png.png">
+        <h3>Dhol Players</h3>
+        <p>Professional Punjabi  dhol players for energetic baraat.</p>
+    </div>
+
+    <div class="card">
+        <img src="sbhaggi.png.jpg">
+        <h3>horse cart</h3>
+        <p>Ride like royalty with timeless tradition.</p>
+    </div>
+
+    <div class="card">
+        <img src="whitevintage.png.png">
+        <h3>Vintage Car</h3>
+        <p>Premium royal vintage cars for dulha entry & photoshoot also colours is available.</p>
+    </div>
+
+    <div class="card">
+        <img src="sum.png.jpg">
+        <h3>umbrella lights</h3>
+        <p>A sky full of glowing dreams premium lighting setup.</p>
+    </div>
+
+</div>
+
+
+
+<!-- WHATSAPP FLOAT -->
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
+
+<script>
+// Scroll fade-in effect
+const cards = document.querySelectorAll(".card");
+function showCards(){
+    cards.forEach(card=>{
+        const pos = card.getBoundingClientRect().top;
+        if(pos < window.innerHeight - 50){
+            card.classList.add("visible");
+        }
+    });
+}
+window.addEventListener("scroll", showCards);
+showCards();
+</script>
+
+</body>
+</html>

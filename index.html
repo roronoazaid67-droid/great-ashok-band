@@ -29,7 +29,7 @@ section, div {
 /* NAVBAR (FINAL FIXED VERSION) */
 .navbar {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     padding: 12px 30px;   /* padding kam ki */
@@ -164,7 +164,32 @@ section, div {
     @keyframes fadeIn {
         0% { opacity: 0; transform: translateY(20px); }
         100% { opacity: 1; transform: translateY(0); }
-    }
+        @media (max-width: 768px) {
+
+ /* ===== MOBILE CSS ===== */
+@media (max-width: 768px) {
+
+  /* Navbar ko wrap kar do */
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  /* Links ko vertical stack karo */
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    display: none;   /* initially hidden */
+  }
+
+  /* Hamburger icon dikhane ke liye (optional) */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Checkbox trick ya JS toggle ke liye */
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
 </style>
 </head>
 
@@ -175,19 +200,19 @@ section, div {
     <div class="logo">Great Ashok Band</div>
 
     <ul class="nav-links">
-        <li><a href="index.html">home</a>home</li>
-        <li><a href="gallery.html">Gallery</a>gallery</li>
-        <li><a href="services.html">services</a>services</li>
-        <li><a href="about.html">about</a>about</li>
-        <li><a href="contact.html">contact</a>contact</li>
+        <li><a href="index.html">home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">services</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html">contact</a></li>
     </ul>
 </nav>
->
+
 
 <!-- HERO SECTION -->
 <div class="hero">
     <div class="hero-content">
-        <h1 class="title">GREAT ASHOK BAND</h1>
+        <h1 class="title"></h1>
         <p class="subtitle">Premium • Traditional • Wedding Band</p>
         <a href="https://wa.me/918920436464?text=Hello%20Great%20Ashok%20Band,%20I%20want%20to%20book%20your%20services."
    class="btn" target="_blank">
@@ -198,4 +223,5 @@ section, div {
 
 </body>
 </html>
+
 

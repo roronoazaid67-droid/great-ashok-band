@@ -27,6 +27,7 @@ body {
     left: 0;
     background: rgba(0,0,0,0.7);
     z-index: 1000;
+     box-sizing: border-box;
 }
 .navbar a {
     margin: 5px 0;
@@ -125,11 +126,38 @@ textarea {
 .find-btn:hover {
     opacity: 0.8;
 }
-/* RESPONSIVE */
-@media(max-width: 768px){
-    .left, .right { width: 100%; }
-    h1 { font-size: 42px; }
+@media (max-width: 768px){
+
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 14px;
+        padding: 6px 10px;
+        min-height: auto;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        margin: 0;
+        white-space: nowrap;
+        line-height: 1.2;
+    }
+
+    body {
+        padding-top: 95px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-top: 90px;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
 }
+
 </style>
 </head>
 <body>
@@ -174,4 +202,5 @@ textarea {
 
 </body>
 </html>
+
 

@@ -1,40 +1,66 @@
-/* ===== COMMON NAVBAR (ALL PAGES) ===== */
-.navbar{
-  width:100%;
-  position:fixed;
-  top:0;
-  left:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:36px;              /* ⬅ space bada */
-  padding:18px 0;       /* ⬅ height badi */
-  background:rgba(0,0,0,0.7);
-  z-index:999;
+/* ===== FINAL COMMON NAVBAR (ALL PAGES) ===== */
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: 14px 12px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  box-sizing: border-box;
 }
 
-.navbar a{
-  font-family:'Playfair Display', serif;
-  font-size:19px;       /* ⬅ text bada */
-  color:#FFD65A;
-  text-decoration:none;
-  letter-spacing:1px;
-  white-space:nowrap;
+.navbar a {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFD65A;
+  text-decoration: none;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  transition: 0.3s ease;
 }
 
-.navbar a:hover{
-  color:#fff;
+.navbar a:hover {
+  color: #ffffff;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width:768px){
-  .navbar{
-    flex-wrap:wrap;
-    gap:14px 22px;      /* ⬅ mobile spacing */
-    padding:12px 14px; /* ⬅ mobile height */
+@media (max-width: 768px) {
+
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* CENTER me lines */
+    gap: 6px 14px;             /* row | column spacing */
+    padding: 10px 12px;
   }
 
-  .navbar a{
-    font-size:17px;     /* ⬅ mobile readable */
+  .navbar a {
+    font-size: 14px;           /* 🔥 CONTACT akela niche nahi jayega */
+    line-height: 1.2;
+    white-space: nowrap;
   }
+
 }
+
+body {
+  padding-top: 80px;
+}
+/* ===== REMOVE NAVBAR LIST BULLET (WHITE TICK) ===== */
+
+.navbar ul {
+  list-style: none;   /* 🔥 bullet remove */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  list-style: none;   /* extra safety */
+}
+

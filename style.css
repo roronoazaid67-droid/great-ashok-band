@@ -51,8 +51,13 @@
 }
 
 body {
-  padding-top: 80px;
+  margin: 0;
+  padding: 0;
+  padding-top: 80px;   /* navbar ke niche space */
+  background: #000;   /* 🔥 white line ka main fix */
+  overflow-x: hidden;
 }
+
 /* ===== REMOVE NAVBAR LIST BULLET (WHITE TICK) ===== */
 
 .navbar ul {
@@ -64,5 +69,6 @@ body {
 .navbar li {
   list-style: none;   /* extra safety */
 }
+
 
 
